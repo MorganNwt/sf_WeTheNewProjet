@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Length;
@@ -31,6 +32,17 @@ class UserType extends AbstractType
             'attr'=> [
                 'placeholder'=> 'Doe',
             ],
+        ])
+        ->add('Telephone', TextType::class,[
+            'label'=> 'Telephone',
+            'attr'=> [
+                'placeholder'=> '0609274878'
+            ],
+        ])
+        ->add('BirthDate', BirthdayType::class, [
+            'widget'=> 'single_text',
+            'format'=> 'yyyy-MM-dd',
+            'placeholder'=>'1987/03/28',
         ])
         ->add('email', EmailType::class, [
             'label'=> 'Email',
