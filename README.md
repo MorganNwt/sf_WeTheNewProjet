@@ -8,7 +8,7 @@ symfony console make:entity Categorie // pour créer le CRUD entity pour la pers
 symfony console make:migration // pour préparer le fichier de migration en BDD
 symfony console d:m:m  ou symfony console doctrine:migrations:migrate // pour faire la migration sur la BDD
 php bin/console make:controller SecurityController // Créer le security controller pour accéder au BO
-symfony console make:form ArticleType Article// pour créer un formulaire
+symfony console make:form puis ArticleType puis Article// pour créer un formulaire
 symfony console make:controller Backend\CategorieController // pour créer une catégorie
 symfony console debug:router // pour voir les routes et debuger si besoin
 
@@ -21,3 +21,10 @@ admin@test.com // Test1234
 ------------------------------------------
 
  {{ dump(app.request.get('_route'))  }}  // nom de la route sur laquel tu est
+
+ -----------------------------------------
+ Pour faire le CRUD il faut:
+ - créer l'entity
+ - make:migration et doctrine migrations:migrate
+ - Backend nomController( index, update, delete)
+ - faire les vue twig ( templates/ backend/frontend FichierNom nom.html.twig)

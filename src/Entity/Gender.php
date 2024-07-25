@@ -2,10 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\GenderRepository;
+use Assert\name;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\GenderRepository;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: GenderRepository::class)]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_NAME', fields: ['name'])]
+#[UniqueEntity(fields:['name'], message: 'Ce nom est déjà utilisé')]
 class Gender
 {
     #[ORM\Id]
@@ -13,10 +18,14 @@ class Gender
     #[ORM\Column]
     private ?int $id = null;
 
+  
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private ?string $name = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?bool $enable = null;
 
     public function getId(): ?int

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Administration des Genres
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <section class="container mt-2">
+        <h1 class="text-center">Administration des Genres</h1>
+        <a href="{{ path('app.admin.gender.create') }}" class="btn btn-primary"> Créer un Genre</a>
+        <div class="row mt-2 gy-4">
+            {% for gender in gender %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <h4>
+                            Genre :
+                            {{ gender.name }}
+                            {{ gender.enable ? 'Actif' : 'Inactif' }}
+                        </h4>
+                    </div>
+                </div>
+                <div class="card-btn">
+                    <a href="{{ path('app.admin.gender.update', {id: gender.id}) }}" class="btn btn-warning"> Modifier</a>
+                    {% include 'Backend/gender/delete.html.twig' %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

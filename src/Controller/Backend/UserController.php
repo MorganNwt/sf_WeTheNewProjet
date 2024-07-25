@@ -73,6 +73,6 @@ class UserController extends AbstractController
             $this->addFlash('error', 'Le token csrf est invalide');
         }  
 
-        return $this->redirectToRoute('admin.users.index');
+        return $this->redirectToRoute('app.admin.users.index');
     }
 }
