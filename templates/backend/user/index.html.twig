@@ -22,10 +22,10 @@
                         </p>
                         <p>
                             Roles:
-                            {{ user.roles|join(', ')|replace( { '_': ' '})|lower }}
+                            {{ user.roles|join(', ')|replace( { '_': ' '})|title }}
                         </p>
                         <div class="card-btn">
-                            <a href=" {{ path('app.admin.users.update', {id:user.id}) }}" class="btn btn-warning">Modifier</a>
+                            <a href=" {{ path('app.admin.users.update', {id: user.id}) }}" class="btn btn-warning">Modifier</a>
                             {% include 'backend/user/delete.html.twig' %}
                         </div>
                     </div>
