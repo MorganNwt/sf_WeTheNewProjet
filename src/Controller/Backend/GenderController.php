@@ -3,7 +3,6 @@
 namespace App\Controller\Backend;
 
 use App\Entity\Gender;
-use App\Form\UserType;
 use App\Form\GenderType;
 use App\Repository\GenderRepository;
 use Doctrine\ORM\EntityManagerInterface;

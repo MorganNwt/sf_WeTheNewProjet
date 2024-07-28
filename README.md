@@ -3,13 +3,15 @@ symfony console d:d:c ou symfony console doctrine:database:create // pour créer
 symfony console list // pour voir la liste des commandes disponibles
 symfony server:start // pour démarrer le server symfony
 symfony server:stop ou ctrl + c // pour couper le server
-symfony console make:controller Backend\ArticleController // pour créer un controller
+
 symfony console make:entity Categorie // pour créer le CRUD entity pour la perssistance et repository pour le read
 symfony console make:migration // pour préparer le fichier de migration en BDD
 symfony console d:m:m  ou symfony console doctrine:migrations:migrate // pour faire la migration sur la BDD
+
+symfony console make:controller Backend\ArticleController // pour créer un controller
 php bin/console make:controller SecurityController // Créer le security controller pour accéder au BO
 symfony console make:form puis ArticleType puis Article// pour créer un formulaire
-symfony console make:controller Backend\CategorieController // pour créer une catégorie
+
 symfony console debug:router // pour voir les routes et debuger si besoin
 
 yarn watch // a lancer pour valider les modifications css ctrl + c pour couper yarn watch
@@ -27,4 +29,4 @@ admin@test.com // Test1234
  - créer l'entity
  - make:migration et doctrine migrations:migrate
  - Backend nomController( index, update, delete)
- - faire les vue twig ( templates/ backend/frontend FichierNom nom.html.twig)
+ - faire les vues twig ( templates/ backend/frontend FichierNom nom.html.twig)
