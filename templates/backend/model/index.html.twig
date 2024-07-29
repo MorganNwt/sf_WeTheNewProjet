@@ -7,7 +7,7 @@
 {% block body %}
 <section class="container mt-2">
         <h1 class="text-center">Administration des Models</h1>
-        {# <a href="{{ path('app.admin.gender.create') }}" class="btn btn-primary"> Créer un Model</a> #}
+        <a href="{{ path('app.admin.model.create') }}" class="btn btn-primary"> Créer un Model</a>
         <div class="row mt-2 gy-4">
             {% for model in model %}
                 <div class="col-md-4">

@@ -1,6 +1,7 @@
 composer dump-env dev // a faire a chaque modif de .env
 symfony console d:d:c ou symfony console doctrine:database:create // pour créer une databse sur Mysql
 symfony console list // pour voir la liste des commandes disponibles
+
 symfony server:start // pour démarrer le server symfony
 symfony server:stop ou ctrl + c // pour couper le server
 
