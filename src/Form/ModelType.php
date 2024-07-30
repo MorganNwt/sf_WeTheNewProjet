@@ -31,15 +31,6 @@ class ModelType extends AbstractType
         ->add('enable', CheckboxType::class, [
             'label'=> 'Actif',
             'required' => false,
-        ])
-        ->add('created_at', DateTimeType::class, [
-            'date_label' => 'Starts On',
-            'widget' => 'single_text',
-            'attr' => ['readonly' => true], // Champ en lecture seule
-            'data' => new \DateTimeImmutable(), // Valeur par défaut à la création
-        ])
-        ->add('updated_at', DateType::class, [
-            'widget' => 'single_text',
         ]);
     }
 

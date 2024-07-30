@@ -65,12 +65,12 @@ class GenderController extends AbstractController
     public function update(?Gender $gender, Request $request): Response|RedirectResponse
     {
         if (!$gender){
-            $this->addFlash('error', 'Utilisateur introuvable');
+            $this->addFlash('error', 'Genre  introuvable');
 
           return $this->redirectToRoute('app.admin.gender.index');
         }
 
-        $form = $this->createForm(GenderType::class, $gender, );
+        $form = $this->createForm(GenderType::class, $gender);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid() ){
@@ -92,8 +92,7 @@ class GenderController extends AbstractController
     {
         if(!$gender){
             $this->addFlash('error', 'Utilisateur introuvable');
-
-            return $this->redirectToRoute('app.admin.gender');
+            return $this->redirectToRoute('app.admin.gender.index');
         }
 
         if($this->isCsrfTokenValid('delete'. $gender->getId(), $request->request->get('token'))) {

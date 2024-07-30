@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Administration des Marques
+{% endblock %}
+
+{% block body %}
+<section class="container mt-2">
+        <h1 class="text-center">Administration des Marques</h1>
+        {# <a href="{{ path('app.admin.marque.create') }}" class="btn btn-primary"> Créer un Model</a> #}
+        <div class="row mt-2 gy-4">
+            {% for marque in marque %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <h4>
+                            Marque :
+                            {{ marque.name }}
+                            {{ marque.slug }}
+                            {{ marque.enable ? 'Actif' : 'Inactif' }}
+                        </h4>
+                    </div>
+                </div>
+                <div class="card-btn">
+                    {# <a href="{{ path('app.admin.marque.update', {id: model.id}) }}" class="btn btn-warning"> Modifier</a> #}
+                    {# {% include 'Backend/marque/delete.html.twig' %} #}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+

@@ -20,8 +20,8 @@
                     </div>
                 </div>
                 <div class="card-btn">
-                    {# <a href="{{ path('app.admin.gender.update', {id: gender.id}) }}" class="btn btn-warning"> Modifier</a> #}
-                    {# {% include 'Backend/gender/delete.html.twig' %} #}
+                    <a href="{{ path('app.admin.model.update', {id: model.id}) }}" class="btn btn-warning"> Modifier</a>
+                    {% include 'Backend/model/delete.html.twig' %}
                 </div>
             {% endfor %}
         </div>

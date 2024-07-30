@@ -1,9 +1,15 @@
 <header>
     <nav class="navbar">
         <a href="{{ path('home')}}">Accueil</a>
-        <a href="{{ path('app.login') }}">Login</a>
+        {% if app.user %}
+            <a href="/logout" data-turbo="false">Logout</a>
+            {% else %}
+            <a href="{{ path('app.login') }}">Login</a>
+        {% endif %}
+       
         <a href=" {{ path('app.admin.users.index') }}">Admin</a> 
         <a href=" {{ path('app.admin.gender.index') }}">Genre</a> 
         <a href="{{ path('app.admin.model.index') }}">Model</a>
+         <a href="{{ path('app.admin.marque.index') }}">Marque</a>
     </nav>
 </header>
